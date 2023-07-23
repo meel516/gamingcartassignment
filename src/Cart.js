@@ -1,11 +1,19 @@
 import React from "react";
-export default function Cart(){
-    return <table class="table">
-    <thead class="table-dark">
-      
-    </thead>
-    <tbody>
-      
-    </tbody>
-  </table>
+export default function Cart(props){
+  return <>
+  
+<tr>
+  <td>
+    {props.title}
+  </td>
+  <td>
+    {props.price}
+  </td>
+  <td>
+    1
+  </td>
+</tr>
+
+  
+  </>
 }

@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from "react";
-
+import { CartContext } from "./App";
+import { useContext } from "react";
 import { client } from "./Contentful";
+import Cart from "./Cart";
 import Game from "./Game.js";
 
 
 
 
 export default function Main(){
-let [data,setData]=useState([])
-    useEffect(()=>{
-client.getEntries({content_type:'productPage'}).then((dta)=>{
-    // console.log(dta.items[0].sys.id)
-    // console.log(dta)
-    setData(dta.items)
-    
-    // let e=dta.items[1].fields
-    // let des=e.description.content[0].content[0].value
-    // console.log(e.description.content[0].content[0].value)
-    // e.des=des
-    // setData({e})
-
-})
-    },[])
+  let {data,idmap}=useContext(CartContext)
     return (
     <>
         <div className="container d-flex flex-column flex-lg-row mt-4 align-items-center align-items-lg-start justify-content-lg-start">
@@ -37,7 +25,36 @@ client.getEntries({content_type:'productPage'}).then((dta)=>{
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body small">
-    hi saleem
+    {
+      <table class="table">
+         <thead class="table-dark">
+      <tr>
+     <th>
+   item
+     </th>
+<th>
+price
+</th>
+<th>
+  quantity
+</th>
+      </tr>
+    
+  
+    </thead>
+    <tbody>
+    {
+     data.filter((entry)=>{
+      if(idmap.current.has(entry.sys.id)){
+        return true
+      }
+     }).map((entry)=>{
+      let obj={...entry.fields,des:entry.fields.description.content[0].content[0].value,src:entry.fields.images[0].fields.file.url,id:entry.sys.id}
+      return <Cart {...obj}/>
+     })}
+     </tbody>
+     </table>
+    }
   </div>
 </div>
         </>
