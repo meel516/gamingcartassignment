@@ -50,6 +50,8 @@ price
       }
      }).map((entry)=>{
       let obj={...entry.fields,des:entry.fields.description.content[0].content[0].value,src:entry.fields.images[0].fields.file.url,id:entry.sys.id}
+      obj.quantity=idmap.current.get(obj.id)
+
       return <Cart {...obj}/>
      })}
      </tbody>

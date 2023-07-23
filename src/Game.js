@@ -9,7 +9,7 @@ export default function Game(props){
       <h5 class="card-title">{props.title}</h5>
       <p class="card-text">{props.des}</p>
       <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onClick={()=>{
-        if(idmap.current.has(props.id)){
+        if(!idmap.current.has(props.id)){
         idmap.current.set(props.id,1)}
         else{
           let prev=idmap.current.get(props.id)

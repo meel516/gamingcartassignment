@@ -10,7 +10,7 @@ export default function Cart(props){
     {props.price}
   </td>
   <td>
-    1
+    {props.quantity}
   </td>
 </tr>
 
