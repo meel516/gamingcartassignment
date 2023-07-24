@@ -8,7 +8,7 @@ export var options = {
     description: "Test Transaction",
     image: "",
     order_id: 'order_MHTGwgj54ivKmL', //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    callback_url: "",
+    callback_url: "https://free4allshop.onrender.com/verification",
     prefill: {
         name: "Gaurav Kumar",
         email: "gaurav.kumar@example.com",
