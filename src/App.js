@@ -13,6 +13,7 @@ function App() {
 
   let [data,setData]=useState([])
   let idmap=useRef(new Map());
+  let [total,setTotal]=useState(0)
     useEffect(()=>{
      client.getEntries({content_type:'productPage'}).then((dta)=>{
     // console.log(dta.items[0].sys.id)
@@ -29,7 +30,7 @@ function App() {
     },[])
       const [cartrefresh,setrefresh]=useState(false)
   return (
-    <CartContext.Provider value={{data:data,idmap:idmap,refresh:setrefresh}}>
+    <CartContext.Provider value={{data:data,idmap:idmap,refresh:setrefresh,total,setTotal}}>
     <div>
       <Nav/>
       <Main/>
