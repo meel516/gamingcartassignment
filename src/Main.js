@@ -77,7 +77,7 @@ price
         options.amount=total*100
         console.log(options)
       
-          axios.post("https://free4allshop.onrender.com",{
+          axios.post("https://free4allshop.onrender.com/checkout",{
               amount:total
         }).then((order)=> {
           options.order_id=order.id
