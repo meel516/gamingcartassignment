@@ -9,7 +9,7 @@ import CartItems from "./components/CartItems";
 import Game from "./Game.js";
 import axios from "axios"
 import CheckoutButton from "./components/CheckoutButton";
-
+import CartTitle from "./components/CartTitle";
 
 
 
@@ -38,7 +38,6 @@ export default function Main(){
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Cart</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body small">
@@ -56,7 +55,9 @@ export default function Main(){
       obj.quantity=idmap.current.get(obj.id)
  sum+=parseInt(obj.price)*parseInt(obj.quantity)
  setTotal(sum)
-      return <><CartItems {...obj}/></>
+      return <>
+      <CartTitle/>
+      <CartItems {...obj}/></>
      })}
      {idmap.current.size==0||<><OrderAmount total={total} />
      <CheckoutButton onClick={()=> {
