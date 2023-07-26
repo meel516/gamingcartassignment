@@ -36,22 +36,11 @@
   font-family: Nunito;
   width: 158px;
 }
-.group-inner,
-.group-item,
-.vector-parent {
+.group-item {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 5.35px;
-  height: 4.29px;
-}
-.group-inner,
-.vector-parent {
-  top: 5.71px;
-}
-.vector-parent {
   top: 88.44px;
   left: 291px;
+  width: 5.35px;
   height: 10px;
 }
 .span1 {
@@ -63,7 +52,7 @@
   display: inline-block;
   width: 32px;
 }
-.rectangle-icon {
+.group-inner {
   position: absolute;
   top: 23.44px;
   left: 10px;
