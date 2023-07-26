@@ -1,15 +1,15 @@
-.group-child {
+.group-child3 {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: #9980ac;
-  position: absolute;
-  top: 0;
-  left: 0.11px;
+  position: relative;
+  top: 50px;
+  left: 25px;
   border-radius: 15px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   width: 325px;
   height: 45px;
-  transform: rotate(0.13deg);
+  transform: rotate(0.0deg);
   transform-origin: 0 0;
 }

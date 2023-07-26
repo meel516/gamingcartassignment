@@ -1,6 +1,6 @@
 import "./CheckoutButton.css";
-const CheckoutButton = () => {
-  return <button className="group-child" />;
+const CheckoutButton = (props) => {
+  return <button {...props} className="group-child3" />;
 };
 
 export default CheckoutButton;

@@ -8,6 +8,7 @@ import OrderAmount from "./components/OrderAmount";
 import CartItems from "./components/CartItems";
 import Game from "./Game.js";
 import axios from "axios"
+import CheckoutButton from "./components/CheckoutButton";
 
 
 
@@ -58,7 +59,7 @@ export default function Main(){
       return <><CartItems {...obj}/></>
      })}
      {idmap.current.size==0||<><OrderAmount total={total} />
-     <button className="btn btn-primary" onClick={()=> {
+     <CheckoutButton onClick={()=> {
       
       
       
@@ -81,7 +82,7 @@ export default function Main(){
       }
       catch(error){
       console.log(error)
-      }}}>Checkout</button></>}
+      }}}>Checkout</CheckoutButton></>}
      </>
     }
   </div>
