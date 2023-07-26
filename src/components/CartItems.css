@@ -1,0 +1,100 @@
+.group-child {
+  position: absolute;
+  top: 13.44px;
+  left: 0;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(153, 128, 172, 0.5);
+  width: 325px;
+  height: 100px;
+}
+.span {
+  position: absolute;
+  top: 86.44px;
+  left: 281px;
+  line-height: 100%;
+  font-weight: 600;
+  font-family: Raleway;
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+}
+.nike-mens-joyride,
+.run-flyknit-shoes {
+  position: absolute;
+  top: 24.44px;
+  left: 120px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e1e1e;
+  display: inline-block;
+  width: 176px;
+}
+.run-flyknit-shoes {
+  top: 45.44px;
+  font-size: 13px;
+  font-family: Nunito;
+  width: 158px;
+}
+.group-item {
+  position: absolute;
+  top: 88.44px;
+  left: 291px;
+  width: 5.35px;
+  height: 10px;
+}
+.span1 {
+  position: absolute;
+  top: 82.44px;
+  left: 120px;
+  font-weight: 500;
+  text-align: right;
+  display: inline-block;
+  width: 32px;
+}
+.group-inner {
+  position: absolute;
+  top: 23.44px;
+  left: 10px;
+  border-radius: 8px;
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+.ellipse-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: #ff0101;
+  width: 26px;
+  height: 27px;
+}
+.component-1-icon,
+.ellipse-parent {
+  position: absolute;
+  top: 0;
+  left: 0.06px;
+  width: 26.87px;
+  height: 26.87px;
+}
+.ellipse-parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  left: 311px;
+  width: 26.94px;
+  height: 27px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 93px;
+  left: 25px;
+  width: 337.94px;
+  height: 113.44px;
+  text-align: left;
+  font-size: 14px;
+  color: #393939;
+  font-family: Poppins;
+}
