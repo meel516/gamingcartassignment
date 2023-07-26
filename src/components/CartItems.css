@@ -40,10 +40,19 @@
 .group-item,
 .vector-parent {
   position: absolute;
-  top: 88.44px;
-  left: 291px;
-  width: 5.35px;
-  height: 10px;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 8.02px;
+}
+.group-inner,
+.vector-parent {
+  top: 10.69px;
+}
+.vector-parent {
+  top: 86px;
+  left: 294px;
+  height: 18.71px;
 }
 .span1 {
   position: absolute;
@@ -90,8 +99,8 @@
   height: 27px;
 }
 .rectangle-parent {
-  position: absolute;
-  top: 93px;
+  position: relative;
+  top: 0px;
   left: 25px;
   width: 337.94px;
   height: 113.44px;
