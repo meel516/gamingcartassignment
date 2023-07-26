@@ -18,6 +18,14 @@ export default function Main(){
   function remove(id){
     idmap.current.delete(id)
   }
+  function add(id){
+    let prev=idmap.current.get(id)
+    idmap.current.set(id,prev+1)
+  }
+  function decrease(id){
+    let prev=idmap.current.get(id)
+    idmap.current.set(id,prev-1)
+  }
     return (
     <>
         <div className="container d-flex flex-column flex-lg-row mt-4 align-items-center align-items-lg-start justify-content-lg-start">
@@ -43,7 +51,7 @@ export default function Main(){
         return true
       }
      }).map((entry)=>{
-      let obj={...entry.fields,des:entry.fields.description.content[0].content[0].value,src:entry.fields.images[0].fields.file.url,id:entry.sys.id,remove}
+      let obj={...entry.fields,des:entry.fields.description.content[0].content[0].value,src:entry.fields.images[0].fields.file.url,id:entry.sys.id,remove,add,decrease}
       obj.quantity=idmap.current.get(obj.id)
  sum+=parseInt(obj.price)*parseInt(obj.quantity)
  setTotal(sum)
