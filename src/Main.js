@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { client } from "./Contentful";
 import { options } from "./Razorpay";
 import Cart from "./Cart";
+import OrderAmount from "./components/OrderAmount";
+import CartItems from "./components/CartItems";
 import Game from "./Game.js";
 import axios from "axios"
 
@@ -13,6 +15,9 @@ import axios from "axios"
 export default function Main(){
   let {data,idmap,total,setTotal}=useContext(CartContext)
   let sum=0
+  function remove(id){
+    idmap.current.delete(id)
+  }
     return (
     <>
         <div className="container d-flex flex-column flex-lg-row mt-4 align-items-center align-items-lg-start justify-content-lg-start">
@@ -29,23 +34,8 @@ export default function Main(){
   </div>
   <div class="offcanvas-body small">
     {<>
-      <table class="table">
-         <thead class="table-dark">
-      <tr>
-     <th>
-   item
-     </th>
-<th>
-price
-</th>
-<th>
-  quantity
-</th>
-      </tr>
-    
-  
-    </thead>
-    <tbody>
+     
+
     {
      data.filter((entry)=>{
       
@@ -53,19 +43,13 @@ price
         return true
       }
      }).map((entry)=>{
-      let obj={...entry.fields,des:entry.fields.description.content[0].content[0].value,src:entry.fields.images[0].fields.file.url,id:entry.sys.id}
+      let obj={...entry.fields,des:entry.fields.description.content[0].content[0].value,src:entry.fields.images[0].fields.file.url,id:entry.sys.id,remove}
       obj.quantity=idmap.current.get(obj.id)
  sum+=parseInt(obj.price)*parseInt(obj.quantity)
  setTotal(sum)
-      return <Cart {...obj}/>
+      return <><CartItems {...obj}/></>
      })}
-     <tr>
-      <td></td>
-      <td></td>
-      <td>Total :{total}</td>
-     </tr>
-     </tbody>
-     </table>
+     {idmap.current.size==0||<><OrderAmount total={total} />
      <button className="btn btn-primary" onClick={()=> {
       
       
@@ -89,7 +73,7 @@ price
       }
       catch(error){
       console.log(error)
-      }}}>Checkout</button>
+      }}}>Checkout</button></>}
      </>
     }
   </div>
